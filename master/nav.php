@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/d05e3fe0a9.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="/Project_Magazine/css/style.css">
+  <link rel="stylesheet" href="/Project_Journal/css/style.css">
 </head>
 <body>
     <?php 
@@ -22,8 +22,8 @@
     ?>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg border-dark border-2 border-bottom align-items-end">
-            <a class="navbar-brand logo m-0 p-0" href="/">
-                <img src="img/logo.png" alt="Logo" width="75px" class="d-inline-block align-text-center"></img>
+            <a class="navbar-brand logo m-0 p-0" href="/Project_Journal">
+                <img src="/Project_Journal/img/logo.png" alt="Logo" width="75px" class="d-inline-block align-text-center"></img>
             </a>
             <span class="logo m-0 p-0 mx-2">
                 <font color="#CC0000">T</font>
@@ -37,28 +37,31 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse justify-content-end collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav align-items-center">
+                <ul class="navbar-nav align-items-lg-center align-items-end">
                     <?php if($username != "none"): ?>
                         <li class="nav-item">
-                            <p class="fs-4 m-0 me-1"><?php echo  "สวัสดีคุณ " . $username; ?></p>
+                            <p class="fs-4 m-0 me-1 mt-1"><?php echo  "สวัสดีคุณ " . $username; ?></p>
                         </li>
                         <?php if($role == "author"): ?>
-                            <li class="nav-item me-1">
-                                <a type="button" class="btn btn-success" href='page-author/dashboard.php'>
-                                    <i class="fa-solid fa-paper-plane me-1"></i> บทความของฉัน
+                            <li class="nav-item ">
+                                <a type="button" class="btn btn-success nav-btn" href='page-author/dashboard.php'>
+                                    <i class="fa-solid fa-newspaper me-1"></i> 
+                                    <p>บทความของฉัน</p> 
                                 </a>
                             </li>
                         <?php endif; ?>
                         <?php if($role == "reviewer"): ?>
-                            <li class="nav-item me-1">
-                                <a type="button" class="btn btn-success" href='page-reviewer/dashboard.php'>
-                                    <i class="fa-solid fa-list-check me-1"></i> บทความที่ต้องตรวจสอบ
+                            <li class="nav-item">
+                                <a type="button" class="btn btn-success nav-btn" href='page-reviewer/dashboard.php'>
+                                    <i class="fa-solid fa-list-check me-3"></i> 
+                                    <p>บทความที่ต้องตรวจสอบ</p> 
                                 </a>
                             </li>
                         <?php endif; ?>
-                        <li class="nav-item me-1">
-                            <a type="button" class="btn btn-danger" href='logout.php'>
-                                <i class="fa-solid fa-circle-xmark me-1"></i> ออกจากระบบ
+                        <li class="nav-item">
+                            <a type="button" class="btn btn-danger nav-btn" href='/Project_Journal/logout.php'>
+                                <i class="fa-solid fa-circle-xmark me-3"></i> 
+                                <p>ออกจากระบบ</p> 
                             </a>
                         </li>
                     <?php endif; ?>
@@ -70,15 +73,21 @@
                         <a class="nav-link" href="/contact"><i class="fa-solid fa-message me-1"
                                 aria-hidden="true"></i>Contact</a>
                     </li> -->
+                    <?php if($username == "none"): ?>
+                        <li class="nav-item">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-outline-success nav-btn">
+                                <i class="fa-solid fa-right-to-bracket me-1" aria-hidden="true"></i> 
+                                <p>เข้าสู่ระบบ</p> 
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-primary nav-btn">
+                                <i class="fa-solid fa-user-plus me-1" aria-hidden="true"></i> 
+                                <p>สมัครสมาชิก</p> 
+                            </button>
+                        </li>
+                    <?php endif; ?>
                 </ul>
-                <?php if($username == "none"): ?>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-outline-success mx-2">
-                        <i class="fa-solid fa-right-to-bracket me-1" aria-hidden="true"></i> เข้าสู่ระบบ
-                    </button>
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-primary me-2">
-                        <i class="fa-solid fa-user-plus me-1" aria-hidden="true"></i> สมัครสมาชิก
-                    </button>
-                <?php endif; ?>
             </div>
         </nav>
     </div>
