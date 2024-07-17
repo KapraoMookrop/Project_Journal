@@ -10,6 +10,7 @@ nav .logo{
 
 nav .nav-btn{
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 4px;
     margin-left: 4px;

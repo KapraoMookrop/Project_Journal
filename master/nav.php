@@ -44,7 +44,7 @@
                         </li>
                         <?php if($role == "author"): ?>
                             <li class="nav-item ">
-                                <a type="button" class="btn btn-success nav-btn" href='page-author/dashboard.php'>
+                                <a type="button" class="btn btn-success nav-btn" href='/Project_Journal/page-author/dashboard.php'>
                                     <i class="fa-solid fa-newspaper me-1"></i> 
                                     <p>บทความของฉัน</p> 
                                 </a>
@@ -52,10 +52,23 @@
                         <?php endif; ?>
                         <?php if($role == "reviewer"): ?>
                             <li class="nav-item">
-                                <a type="button" class="btn btn-success nav-btn" href='page-reviewer/dashboard.php'>
+                                <a type="button" class="btn btn-success nav-btn" href='/Project_Journal/page-reviewer/dashboard.php'>
                                     <i class="fa-solid fa-list-check me-3"></i> 
                                     <p>บทความที่ต้องตรวจสอบ</p> 
                                 </a>
+                            </li>
+                        <?php endif; ?>
+                        <?php if($role == "admin"): ?>
+                            <li class="nav-item dropdown">
+                                <a type="button" class="btn btn-success nav-btn dropdown-toggle" href='#'  data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fa-solid fa-list-check me-3"></i> 
+                                    <p>จัดการข้อมูล</p> 
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="/Project_Journal/page-admin/edit_user/dashboard.php">ข้อมูลผู้ใช้</a></li>
+                                    <li><a class="dropdown-item" href="/Project_Journal/page-admin/edit_journal/dashboard.php">ข้อมูลวารหลัก</a></li>
+                                    <li><a class="dropdown-item" href="/Project_Journal/page-admin/edit_sub_journal/dashboard.php">ข้อมูลวารย่อย</a></li>
+                                </ul>
                             </li>
                         <?php endif; ?>
                         <li class="nav-item">
@@ -76,13 +89,13 @@
                     <?php if($username == "none"): ?>
                         <li class="nav-item">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-outline-success nav-btn">
-                                <i class="fa-solid fa-right-to-bracket me-1" aria-hidden="true"></i> 
+                                <i class="fa-solid fa-right-to-bracket me-3" aria-hidden="true"></i> 
                                 <p>เข้าสู่ระบบ</p> 
                             </button>
                         </li>
                         <li class="nav-item">
                             <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" class="btn btn-primary nav-btn">
-                                <i class="fa-solid fa-user-plus me-1" aria-hidden="true"></i> 
+                                <i class="fa-solid fa-user-plus me-3" aria-hidden="true"></i> 
                                 <p>สมัครสมาชิก</p> 
                             </button>
                         </li>
@@ -249,7 +262,7 @@
             })();
         </script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 
